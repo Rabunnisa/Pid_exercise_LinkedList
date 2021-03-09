@@ -105,17 +105,25 @@ public class LinkedList {
     public int get(int index) {
         if (first == null)
             throw new IndexOutOfBoundsException();
-        Node temp = first;
+        Node current= first;
+        Node next = current.next;
         for (int k =0; k < index; k++) {
-            int val = temp.elem;
-            temp = temp.next;
-            if (temp == null)
-                throw new IndexOutOfBoundsException();
-            return val;
+           if(next==null)
+           {
+               return -1;
+           }
+
+            current= next;
+            next= next.next;
+
 
         }
-        return -1;
+
+        return current.elem;
     }
+
+
+
     private void decrementCounter() {
         counter--;
     }

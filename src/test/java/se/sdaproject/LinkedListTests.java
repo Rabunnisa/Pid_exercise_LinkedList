@@ -55,7 +55,7 @@ class LinkedListTests {
         list.add(4);
         list.add(3);
         list.get(1);
-        assertEquals(list.get(0), 11);
+        assertEquals(list.get(4), -1);
 
     }
     @Test
@@ -65,7 +65,7 @@ class LinkedListTests {
         list.add(4);
         list.add(3);
         list.remove(1);
-
+assertTrue(true);
 
 
     }

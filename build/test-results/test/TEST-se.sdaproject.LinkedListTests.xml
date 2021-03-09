@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="se.sdaproject.LinkedListTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-09T12:55:32" hostname="SDA-Lund-64-mbpro" time="0.016">
+<testsuite name="se.sdaproject.LinkedListTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-09T13:36:03" hostname="SDA-Lund-64-mbpro" time="0.019">
   <properties/>
-  <testcase name="getNumberOfList()" classname="se.sdaproject.LinkedListTests" time="0.016"/>
+  <testcase name="getNumberOfList()" classname="se.sdaproject.LinkedListTests" time="0.019"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
