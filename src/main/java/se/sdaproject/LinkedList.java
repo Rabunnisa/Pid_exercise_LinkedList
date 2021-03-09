@@ -1,26 +1,20 @@
 package se.sdaproject;
+
 /**
  * @elem it is a first field used for data
  * @next reference to the next node
- * */
+ */
 
 class Node {
 
     int elem;
     Node next;
+
     Node(int num) {
         this.elem = num;
         this.next = null;
     }
 
-    public Object getData() {
-        return elem;
-    }
-
-
-    public void setData(Object dataValue) {
-        elem = (int) dataValue;
-    }
 
     public Node getNext() {
         return next;
@@ -31,15 +25,17 @@ class Node {
     }
 }
 
-
+/**
+ * Main class is implemented here
+ */
 public class LinkedList {
 
-    private static int counter;
+    int counter;
     public Node first;
 
-/**
- *Method to add elements int he linlkedList
-    */
+    /**
+     * Method to add elements int he linlkedList
+     */
     public void add(int num) {
         // int num is available!
 
@@ -60,35 +56,22 @@ public class LinkedList {
 
             current.next = node;
         }
-        incrementCounter();
-    }
-
-    private static int getCounter() {
-        return counter;
-    }
-
-    private static void incrementCounter() {
         counter++;
     }
 
-    private void decrementCounter() {
-        counter--;
-    }
 
     /**
-     *
      * @size is used to find the number of variables added to the list
      */
     public int size() {
-        return getCounter();
+        return counter;
     }
 
     /**
-     *
      * @search method to find the element in the list with value
      */
-    public int search(int element)
-    {
+
+    public int search(int element) {
 
         if (first == null) {
             return -1;
@@ -112,63 +95,61 @@ public class LinkedList {
             index++;
             temp = temp.next;
         }
-
-        // Returns -1 if the element is not found
         return -1;
     }
 
 
     /**
-     *Get method to get the particular element at particular index
+     * Get method to get the particular element at particular index
      */
-    public Object get(int index)
+    public int get(int index) {
+        if (first == null)
+            throw new IndexOutOfBoundsException();
+        Node temp = first;
+        for (int k =0; k < index; k++) {
+            int val = temp.elem;
+            temp = temp.next;
+            if (temp == null)
+                throw new IndexOutOfBoundsException();
+            return val;
 
-    {
-        // index must be 1 or higher
-        if (index < 0)
-            return null;
-        Node Current = null;
-        if (first != null) //Checking the list is not empty
-        {
-            Current = first.next;
-            for (int i = 0; i < index; i++) {
-                if (Current.next == null)
-                    return null;
-
-                Current = Current.next;
-            }
-            return Current.getData();
         }
-        return Current;}
+        return -1;
+    }
+    private void decrementCounter() {
+        counter--;
+    }
 
 
     /**
+     * Remove method is used to remove the element at particular index
      *
-     Remove method is used to remove the element at particular index
+     * @return
      */
-     public boolean remove(int index) {
 
-         // if the index is out of range, exit
-         if (index < 1 || index > size())
-             return false;
+    public boolean remove(int index) {
 
-         Node Current = first;
-         if (first != null) {
-             for (int i = 0; i < index; i++) {
-                 if (Current.getNext() == null)
-                     return false;
+        // if the index is out of range, exit
+        if (index < 1 || index > size())
+            return false;
 
-                 Current = Current.getNext();
-             }
-             Current.setNext(Current.getNext().getNext());
+        Node Current = first;
+        if (first != null) {
+            for (int i = 0; i < index; i++) {
+                if (Current.next == null)
+                    return false;
 
-             // decrement the number of elements variable
-             decrementCounter();
-             return true;
+                Current = Current.next;
+            }
+            Current.setNext(Current.getNext().getNext());
 
-         }
-         return false;
-     }
+            // decrement the number of elements variable
+            decrementCounter();
+            return true;
+
+        }
+        return false;
+    }
 
 
     // useful for testing!
@@ -192,7 +173,7 @@ public class LinkedList {
             // go through the chain of nodes, starting with
             // "first"
 
-            Node current = first;            
+            Node current = first;
             // treat first element specially:
             builder.append("" + current.elem);
 

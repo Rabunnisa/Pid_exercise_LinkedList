@@ -39,7 +39,6 @@ Make sure to read the code and comments carefully to understand how
 the template works. It will facilitate your implementation of the
 different operations.
 
-<<<<<<< HEAD
 #### Exercise 1: Add operation
 
 Carefully review the `add` operation that was implemented in the
@@ -51,16 +50,6 @@ Once you understand how the code for implementing the add operation
 works, you have completed this exercise. :-)
 
 #### Exercise 2: Search operation
-=======
-#### Exercise 1: Add operation is implememted 
-
-This method appends the specified element to the end of this list.
-Syntax:
-boolean add(Object element)
-
-
-#### Exercise 2: Search operation is implemented 
->>>>>>> Initial commit
 
 Now that we are able to add data elements (integers) to the data
 structure, we might want to search for some data based on its
@@ -69,7 +58,6 @@ node and checking each node until we find the element or reach
 null. If we find the element the function should return the index
 otherwise it should return -1.
 
-<<<<<<< HEAD
 #### Exercise 3: Get operation
 
 Once you have a linked list and added a few elements to it, you might
@@ -78,11 +66,6 @@ want to get access to them. In this assignment you will implement a
 position in the chain of nodes). This method can be implemented by
 iterating through the list and returning the element when you have
 reached the index given as the parameter.
-=======
-#### Exercise 3: Get operation is implemented 
-
-LinkedList. get() method is used to fetch or retrieve an element at a specific index from a LinkedList. Parameters: The parameter index is of integer data type that specifies the position or index of the element to be fetched from the LinkedList.
->>>>>>> Initial commit
 
 #### Exercise 4: Size operation
 
@@ -97,7 +80,6 @@ you can return the variable that counts the number of elements.
 > iterating through the list every time we want to get the size of the
 > linked list?
 
-<<<<<<< HEAD
 #### Bonus Exercise 5 (Optional): Remove operation
 
 Now that we know how many elements our data structure has, we might
@@ -107,14 +89,6 @@ operation. What we want to do is to remove an element and rearrange
 the nodes. If this is done correctly we will not have any dangling
 pointers, i.e., we have a broken chain and we lose a part of the data
 structure.
-=======
-#### Bonus Exercise 5 (Optional): Remove operation is also implemented 
-
-remove() method is used to remove an element from a linked list.
-The element is removed from the beginning or head of the linked list. 
-Parameters: This function does not take any parameter.
-Return Value: This method returns the head of the list or the element present at the head of the list.
->>>>>>> Initial commit
 
 #### Discussion
 

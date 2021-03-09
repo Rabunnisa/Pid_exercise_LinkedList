@@ -16,7 +16,10 @@ class LinkedListTests {
     void addANumberToList() {
         LinkedList list = new LinkedList();
         list.add(5);
-        String expected = "LinkedList(5)";
+        list.add(3);
+        list.add(10);
+        list.add(11);
+        String expected = "LinkedList(5,3,10,11)";
         assertEquals(list.toString(), expected);
     }
 
@@ -28,27 +31,45 @@ class LinkedListTests {
     }
 
     @Test
-     void getNumberOfList(){
+    void checkTheSizeOfList(){
         LinkedList list = new LinkedList();
+        list.add(11);
+        list.size();
+        assertEquals(list.size(),1);
+    }
+    @Test
+    void searchTheGivenNumberInList(){
+        LinkedList list = new LinkedList();
+        list.add(11);
+        list.add(4);
+        list.add(3);
+        list.search(3);
+
+        assertEquals(list.search(3), 2);
+    }
+
+    @Test
+     void getNumberOfList() {
+        LinkedList list = new LinkedList();
+        list.add(11);
+        list.add(4);
+        list.add(3);
         list.get(1);
-        String expected = "LinkedList()";
-        assertEquals(list.toString(), expected);
-
+        assertEquals(list.get(0), 11);
 
     }
     @Test
-    void removeNumderOfList(){
+    void removeGivenNumberFromList(){
         LinkedList list = new LinkedList();
+        list.add(11);
+        list.add(4);
+        list.add(3);
         list.remove(1);
-        String expected = "LinkedList()";
-        assertEquals(list.toString(), expected);
+
+
+
     }
 
-    @Test
-    void searchNumderInList()
-    {LinkedList list = new LinkedList();
-        list.search(5);
-        String expected = "LinkedList()";
-        assertEquals(list.toString(), expected);
-    }
+
+
 }
