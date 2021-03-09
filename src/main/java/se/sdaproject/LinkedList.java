@@ -105,23 +105,21 @@ public class LinkedList {
     public int get(int index) {
         if (first == null)
             throw new IndexOutOfBoundsException();
-        Node current= first;
+        Node current = first;
         Node next = current.next;
-        for (int k =0; k < index; k++) {
-           if(next==null)
-           {
-               return -1;
-           }
+        for (int k = 0; k < index; k++) {
+            if (next == null) {
+                return -1;
+            }
 
-            current= next;
-            next= next.next;
+            current = next;
+            next = next.next;
 
 
         }
 
         return current.elem;
     }
-
 
 
     private void decrementCounter() {
@@ -135,6 +133,8 @@ public class LinkedList {
      * @return
      */
 
+
+
     public boolean remove(int index) {
 
         // if the index is out of range, exit
@@ -144,10 +144,10 @@ public class LinkedList {
         Node Current = first;
         if (first != null) {
             for (int i = 0; i < index; i++) {
-                if (Current.next == null)
+                if (Current.getNext() == null)
                     return false;
 
-                Current = Current.next;
+                Current = Current.getNext();
             }
             Current.setNext(Current.getNext().getNext());
 
@@ -160,41 +160,41 @@ public class LinkedList {
     }
 
 
-    // useful for testing!
-    public String toString() {
-        // goal is to return a string like this:
-        // "LinkedList(5,2,10)"
+        // useful for testing!
+        public String toString () {
+            // goal is to return a string like this:
+            // "LinkedList(5,2,10)"
 
-        StringBuilder builder = new StringBuilder();
+            StringBuilder builder = new StringBuilder();
 
-        // call methods on "builder" to add strings
+            // call methods on "builder" to add strings
 
-        builder.append("LinkedList(");
-        // append strings for each integer in the list
+            builder.append("LinkedList(");
+            // append strings for each integer in the list
 
-        if (first == null) {
-            // what to do here?
-            // string to be returned: "LinkedList()"
-            // nothing left to do!
-        } else {
-            // here, we know that first != null
-            // go through the chain of nodes, starting with
-            // "first"
+            if (first == null) {
+                // what to do here?
+                // string to be returned: "LinkedList()"
+                // nothing left to do!
+            } else {
+                // here, we know that first != null
+                // go through the chain of nodes, starting with
+                // "first"
 
-            Node current = first;
-            // treat first element specially:
-            builder.append("" + current.elem);
+                Node current = first;
+                // treat first element specially:
+                builder.append("" + current.elem);
 
-            while (current.next != null) {
-                current = current.next;
-                builder.append("," + current.elem);
+                while (current.next != null) {
+                    current = current.next;
+                    builder.append("," + current.elem);
+                }
+                // current.next == null
+                // we have already appended the last num!
             }
-            // current.next == null
-            // we have already appended the last num!
-        }
 
-        // append ")"
-        builder.append(")");
-        return builder.toString();
+            // append ")"
+            builder.append(")");
+            return builder.toString();
+        }
     }
-}

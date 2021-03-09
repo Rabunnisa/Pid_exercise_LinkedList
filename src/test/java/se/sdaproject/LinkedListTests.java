@@ -34,8 +34,9 @@ class LinkedListTests {
     void checkTheSizeOfList(){
         LinkedList list = new LinkedList();
         list.add(11);
+        list.add(13);
         list.size();
-        assertEquals(list.size(),1);
+        assertEquals(list.size(),2);
     }
     @Test
     void searchTheGivenNumberInList(){
@@ -43,9 +44,9 @@ class LinkedListTests {
         list.add(11);
         list.add(4);
         list.add(3);
-        list.search(3);
+        list.search(11);
 
-        assertEquals(list.search(3), 2);
+        assertEquals(list.search(11), 0);
     }
 
     @Test
